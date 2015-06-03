@@ -15,7 +15,7 @@ describe "#generate_username2" do
     expect( generate_username2("nathan", "allen") ).to eq "nallen"
   end
 
-  it "downcases each name before combining" do   
+  it "downcases each name before combining" do
     expect( generate_username2("Nathan", "Allen") ).to eq "nallen"
   end
 
@@ -23,7 +23,7 @@ describe "#generate_username2" do
     expect( generate_username2("nathan" , " allen ") ).to eq "nallen"
     expect( generate_username2(" nathan " , "allen") ).to eq "nallen"
   end
-  
+
   it "handles empty strings" do
     expect( generate_username2("nathan", "") ).to eq nil
     expect( generate_username2("", "") ).to eq nil
@@ -36,7 +36,7 @@ describe "#generate_username2" do
     expect( generate_username2("@Nathan", " Allen ") ).to eq "nallen"
   end
 end
-   
+
 describe "#generate_username3" do
   it "adds the last two digits of the birth year to the username" do
     expect( generate_username3("john", "doe", 1945) ).to eq "jdoe45"
@@ -52,9 +52,9 @@ end
 
 describe "#check_privilege" do
   let (:user_types) { ["user", "seller", "manager", "admin"] }
-  
-  it "returns the corresponding privilege prefix" do  
-    i = 0
+
+  it "returns the corresponding privilege prefix" do
+    # i = 0
     user_types.each_with_index do |utype, i|
       expect( check_privilege(i) ).to eq utype
     end
@@ -77,7 +77,7 @@ describe "#generate_username4" do
     expect( generate_username4("john", "doe", 1945) ).to eq "jdoe45"
   end
 end
-   
+
 
 describe "#generate_username5" do
   it "acts normally if there is no name conflict" do
